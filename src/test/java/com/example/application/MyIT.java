@@ -51,13 +51,18 @@ public class MyIT {
 
         RemoteWebDriver driver = new RemoteWebDriver(new URL("https://ondemand.saucelabs.com/wd/hub"), cap);
 
-        log("Test " + name.getMethodName() + " starting");
-        driver.get("http://localhost:8080/");
-        log("Test " + name.getMethodName() + " finding");
-        WebElement button = driver.findElement(By.tagName("button"));
-        Assert.assertEquals("a button", button.getText());
-        log("Test " + name.getMethodName() + " done");
-
+        try {
+            log("Test " + name.getMethodName() + " starting");
+            driver.get("http://localhost:8080/");
+            log("Test " + name.getMethodName() + " finding");
+            WebElement button = driver.findElement(By.tagName("button"));
+            Assert.assertEquals("a button", button.getText());
+            log("Test " + name.getMethodName() + " done");
+        } finally {
+            log("Test " + name.getMethodName() + " shutting down driver");
+            driver.close();
+            driver.quit();
+        }
     }
 
     private void log(String string) {
