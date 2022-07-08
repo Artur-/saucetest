@@ -257,7 +257,8 @@
     "construct-style-sheets-polyfill": "$construct-style-sheets-polyfill",
     "lit": "$lit",
     "@polymer/polymer": "$@polymer/polymer",
-    "chokidar": "$chokidar"
+    "chokidar": "$chokidar",
+    "date-fns": "$date-fns"
   },
   "vaadin": {
     "dependencies": {
