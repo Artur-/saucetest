@@ -53,9 +53,7 @@ public class MyIT {
 
         log("Test " + name.getMethodName() + " starting");
         driver.get("http://localhost:8080/");
-        log("Test " + name.getMethodName() + " waiting");
-        // Thread.sleep(30000);
-        log("Test " + name.getMethodName() + " waited");
+        log("Test " + name.getMethodName() + " finding");
         WebElement button = driver.findElement(By.tagName("button"));
         Assert.assertEquals("a button", button.getText());
         log("Test " + name.getMethodName() + " done");
